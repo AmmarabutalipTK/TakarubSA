@@ -1,7 +1,7 @@
-import { Facebook, Instagram,X } from "lucide-react";
+import { Facebook, Twitter, Instagram } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-export function Footer({textColor="black"}: {textColor?: string}) {
+export function Footer() {
   const { tr } = useLanguage();
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -62,7 +62,7 @@ export function Footer({textColor="black"}: {textColor?: string}) {
                 className="h-24 w-auto"
               />
             </a>
-            <p className={`text-muted-foreground text-sm leading-relaxed mb-8 max-w-xs text-${textColor}`}>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-8 max-w-xs">
               {tr.footer.description}
             </p>
             <div className="flex gap-4">
@@ -70,7 +70,7 @@ export function Footer({textColor="black"}: {textColor?: string}) {
                 <Facebook className="w-5 h-5" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-colors">
-                <X className="w-5 h-5" />
+                <Twitter className="w-5 h-5" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
@@ -80,7 +80,7 @@ export function Footer({textColor="black"}: {textColor?: string}) {
 
           {footerSections.map((section) => (
             <div key={section.title} className="lg:col-span-1">
-              <h4 className={`font-display font-bold text-white mb-6 text-${textColor}`}>{section.title}</h4>
+              <h4 className="font-display font-bold text-white mb-6">{section.title}</h4>
               <ul className="flex flex-col gap-4">
                 {section.links.map((item) => {
                   const isExternal = item.href && (item.href.startsWith("http") || item.href.startsWith("mailto:") || item.href.startsWith("tel:"));
@@ -90,12 +90,12 @@ export function Footer({textColor="black"}: {textColor?: string}) {
                         <a
                           href={item.href}
                           {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                          className={`text-sm text-muted-foreground hover:text-primary transition-colors text-${textColor} `}
+                          className="text-sm text-muted-foreground hover:text-primary transition-colors"
                         >
                           {item.label}
                         </a>
                       ) : (
-                        <span className={`text-sm text-muted-foreground text-${textColor}`}>{item.label}</span>
+                        <span className="text-sm text-muted-foreground">{item.label}</span>
                       )}
                     </li>
                   );
@@ -106,12 +106,12 @@ export function Footer({textColor="black"}: {textColor?: string}) {
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className={`text-sm text-muted-foreground text-${textColor}`}>
+          <p className="text-sm text-muted-foreground">
             {tr.footer.copyright}
           </p>
           <div className="flex items-center gap-6">
-            <a href={`${base}/privacy-policy`} className={`text-sm text-muted-foreground hover:text-white transition-colors text-${textColor}`}>{tr.footer.privacyPolicy}</a>
-            <a href={`${base}/terms-of-service`} className={`text-sm text-muted-foreground hover:text-white transition-colors text-${textColor}`}>{tr.footer.termsOfService}</a>
+            <a href={`${base}/privacy-policy`} className="text-sm text-muted-foreground hover:text-white transition-colors">{tr.footer.privacyPolicy}</a>
+            <a href={`${base}/terms-of-service`} className="text-sm text-muted-foreground hover:text-white transition-colors">{tr.footer.termsOfService}</a>
           </div>
         </div>
       </div>

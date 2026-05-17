@@ -4,14 +4,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap');
 
-html[dir="rtl"] body {
-  font-family: 'Tajawal', 'Inter', sans-serif;
+/* RTL Support */
+html[dir="rtl"] {
+  --font-sans: 'Tajawal', sans-serif;
+  --font-display: 'Tajawal', sans-serif;
 }
 
-html[dir="rtl"] .font-display {
+html[dir="rtl"] body {
   font-family: 'Tajawal', sans-serif;
 }
 
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6 {
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* Animations */
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -29,55 +41,60 @@ html[dir="rtl"] .font-display {
   will-change: transform;
 }
 
+/* Root Theme Variables */
 :root {
-  --background: 255 255 255;
-  --foreground: 10 10 10;
+  --background: 0 0% 100%;
+  --foreground: 0 0% 4%;
 
-  --border: 229 231 235;
-  --input: 229 231 235;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
 
-  --primary: 249 115 22;
-  --primary-foreground: 255 255 255;
+  --primary: 16 100% 60%;
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 23 23 23;
-  --secondary-foreground: 255 255 255;
+  --secondary: 0 0% 9%;
+  --secondary-foreground: 0 0% 100%;
 
-  --muted: 245 245 245;
-  --muted-foreground: 115 115 115;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 40%;
 
-  --accent: 255 237 213;
-  --accent-foreground: 194 65 12;
+  --accent: 16 100% 96%;
+  --accent-foreground: 16 100% 45%;
 
-  --card: 255 255 255;
-  --card-foreground: 10 10 10;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 4%;
+  --card-border: 0 0% 90%;
 }
 
+/* Dark Mode */
 .dark {
-  --background: 10 10 10;
-  --foreground: 255 255 255;
+  --background: 0 0% 4%;
+  --foreground: 0 0% 100%;
 
-  --border: 38 38 38;
-  --input: 38 38 38;
+  --border: 0 0% 15%;
+  --input: 0 0% 15%;
 
-  --primary: 249 115 22;
-  --primary-foreground: 255 255 255;
+  --primary: 16 100% 60%;
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 23 23 23;
-  --secondary-foreground: 255 255 255;
+  --secondary: 0 0% 10%;
+  --secondary-foreground: 0 0% 100%;
 
-  --muted: 38 38 38;
-  --muted-foreground: 163 163 163;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 65%;
 
-  --accent: 124 45 18;
-  --accent-foreground: 255 237 213;
+  --accent: 16 100% 15%;
+  --accent-foreground: 16 100% 60%;
 
-  --card: 15 15 15;
-  --card-foreground: 255 255 255;
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 100%;
+  --card-border: 0 0% 15%;
 }
 
+/* Base Styles */
 @layer base {
   * {
-    @apply border-gray-200;
+    border-color: hsl(var(--border));
   }
 
   html {
@@ -85,8 +102,11 @@ html[dir="rtl"] .font-display {
   }
 
   body {
-    @apply antialiased bg-white text-black;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
   }
 
   h1,
@@ -100,9 +120,12 @@ html[dir="rtl"] .font-display {
   }
 }
 
+/* Utilities */
 @layer utilities {
   .text-gradient-orange {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-400;
+    background: linear-gradient(to right, hsl(var(--primary)), #ff985c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .bg-mesh-dark {
@@ -110,12 +133,12 @@ html[dir="rtl"] .font-display {
     background-image:
       radial-gradient(
         at 100% 0%,
-        rgba(255, 107, 53, 0.15) 0px,
+        hsla(16, 100%, 60%, 0.15) 0px,
         transparent 50%
       ),
       radial-gradient(
         at 0% 100%,
-        rgba(255, 107, 53, 0.1) 0px,
+        hsla(16, 100%, 60%, 0.1) 0px,
         transparent 50%
       );
   }
@@ -125,21 +148,27 @@ html[dir="rtl"] .font-display {
     background-image:
       radial-gradient(
         at 100% 0%,
-        rgba(255, 245, 240, 1) 0px,
+        hsla(16, 100%, 95%, 1) 0px,
         transparent 50%
       ),
       radial-gradient(
         at 0% 100%,
-        rgba(250, 250, 250, 1) 0px,
+        hsla(0, 0%, 98%, 1) 0px,
         transparent 50%
       );
   }
 
   .glass-panel {
-    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-lg;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
   }
 
   .glass-panel-dark {
-    @apply bg-black/50 backdrop-blur-xl border border-white/10;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(255, 107, 53, 0.05);
   }
 }

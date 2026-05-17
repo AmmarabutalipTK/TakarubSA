@@ -71,67 +71,37 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("submitting");
+    setErrorMsg("");
 
-  setStatus("submitting");
-  setErrorMsg("");
+    try {
+      const payload = {
+        ...formData,
+        mobile: `${countryCode} ${formData.mobile}`.trim(),
+      };
 
-  try {
-    const payload = {
-      title: `New Contact Request - ${formData.name}`,
-      body: `
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${countryCode} ${formData.mobile}
-Service: ${formData.service}
-
-Message:
-${formData.message}
-      `,
-      channel: "email",
-    };
-
-    const res = await fetch(
-      "https://api.chatgate.io/bot-api/v1.0/customer/94401/bot/8b977976e3804441/flow/EC5B4D614E1E42CEBC8BDA8F2D997D63",
-      {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization:
-            "Basic 0cac7f1f-8f24-40c9-88f0-c27a24baeeee-IGvRaoY",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
-      }
-    );
-
-    if (res.ok) {
-      setStatus("success");
-
-      setFormData({
-        name: "",
-        email: "",
-        mobile: "",
-        service: "",
-        message: "",
       });
 
-      setCountryCode("+966");
-    } else {
-      const data = await res.json().catch(() => ({}));
-
-      setErrorMsg(data.error || tr.contact.errorFallback);
-
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", mobile: "", service: "", message: "" });
+        setCountryCode("+966");
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setErrorMsg(data.error || tr.contact.errorFallback);
+        setStatus("error");
+      }
+    } catch {
+      setErrorMsg(tr.contact.networkError);
       setStatus("error");
     }
-  } catch (error) {
-    console.error(error);
-
-    setErrorMsg(tr.contact.networkError);
-
-    setStatus("error");
-  }
-};
+  };
 
   return (
     <div className="min-h-screen flex flex-col w-full bg-[#07070e] selection:bg-primary selection:text-white">
@@ -388,7 +358,7 @@ ${formData.message}
           </div>
         </section>
       </main>
-      <Footer textColor="white" />
+      <Footer />
     </div>
   );
 }
