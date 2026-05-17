@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap');
+
+html[dir="rtl"] body {
+  font-family: 'Tajawal', 'Inter', sans-serif;
+}
+
+html[dir="rtl"] .font-display {
+  font-family: 'Tajawal', sans-serif;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+:root {
+  --background: 255 255 255;
+  --foreground: 10 10 10;
+
+  --border: 229 231 235;
+  --input: 229 231 235;
+
+  --primary: 249 115 22;
+  --primary-foreground: 255 255 255;
+
+  --secondary: 23 23 23;
+  --secondary-foreground: 255 255 255;
+
+  --muted: 245 245 245;
+  --muted-foreground: 115 115 115;
+
+  --accent: 255 237 213;
+  --accent-foreground: 194 65 12;
+
+  --card: 255 255 255;
+  --card-foreground: 10 10 10;
+}
+
+.dark {
+  --background: 10 10 10;
+  --foreground: 255 255 255;
+
+  --border: 38 38 38;
+  --input: 38 38 38;
+
+  --primary: 249 115 22;
+  --primary-foreground: 255 255 255;
+
+  --secondary: 23 23 23;
+  --secondary-foreground: 255 255 255;
+
+  --muted: 38 38 38;
+  --muted-foreground: 163 163 163;
+
+  --accent: 124 45 18;
+  --accent-foreground: 255 237 213;
+
+  --card: 15 15 15;
+  --card-foreground: 255 255 255;
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased bg-white text-black;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer utilities {
+  .text-gradient-orange {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-400;
+  }
+
+  .bg-mesh-dark {
+    background-color: #0a0a0a;
+    background-image:
+      radial-gradient(
+        at 100% 0%,
+        rgba(255, 107, 53, 0.15) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 0% 100%,
+        rgba(255, 107, 53, 0.1) 0px,
+        transparent 50%
+      );
+  }
+
+  .bg-mesh-light {
+    background-color: #ffffff;
+    background-image:
+      radial-gradient(
+        at 100% 0%,
+        rgba(255, 245, 240, 1) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 0% 100%,
+        rgba(250, 250, 250, 1) 0px,
+        transparent 50%
+      );
+  }
+
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-lg;
+  }
+
+  .glass-panel-dark {
+    @apply bg-black/50 backdrop-blur-xl border border-white/10;
+  }
+}

@@ -1,0 +1,20 @@
+packages:
+  "framer-motion": "For premium scroll animations, layout transitions, and interactive visual polish"
+  "clsx": "Utility for conditionally joining class names"
+  "tailwind-merge": "Utility to merge tailwind classes without style conflicts"
+
+images:
+  - path: "artifacts/landing-page/public/images/dashboard-preview.png"
+    description: "Sleek, modern enterprise SaaS dashboard UI showing analytics, charts, and metrics. Minimalist design, stark white background with black text and bright vibrant orange accent colors. High fidelity, premium software mockup"
+    aspect_ratio: "16:9"
+  - path: "artifacts/landing-page/public/images/agent-tools.png"
+    description: "Modern enterprise software interface showing a customer support agent chat inbox, ticket view, and AI assistant tools sidebar. Sleek minimal white UI with black elements and vibrant orange accents."
+    aspect_ratio: "16:9"
+  - path: "artifacts/landing-page/public/images/workflow-nodes.png"
+    description: "Abstract representation of data workflow integration nodes connected by glowing lines. Dark black background with bright glowing orange lines and clean white tech icons. Minimal, futuristic, enterprise tech style."
+    aspect_ratio: "16:9"
+
+notes:
+  - No backend API needed; this is a pure frontend marketing landing page.
+  - Using a bold white, black, and orange (#FF6B35) color scheme.
+  - Relying on Framer Motion for scroll-triggered visual entry effects.
