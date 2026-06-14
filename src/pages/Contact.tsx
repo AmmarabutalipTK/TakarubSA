@@ -157,7 +157,7 @@ export default function Contact() {
                     </a>
 
                     <a
-                      href="tel:+966590536401"
+                      href="tel:+966590534431"
                       className={cn("group flex items-start gap-4 hover:translate-x-1 transition-transform duration-300", isRTL && "hover:translate-x-0 hover:-translate-x-1")}
                     >
                       <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 group-hover:bg-primary/5 transition-all">
@@ -165,8 +165,8 @@ export default function Contact() {
                       </div>
                       <div>
                         <p className="text-xs text-white/25 uppercase tracking-wider mb-1">{tr.contact.phoneLabel}</p>
-                        <p className="text-white/70 font-medium group-hover:text-white transition-colors">
-                          +966 590 536 401
+                        <p   dir="ltr" className="text-white/70 font-medium group-hover:text-white transition-colors">
+                          +966 59 053 4431
                         </p>
                       </div>
                     </a>
@@ -185,7 +185,7 @@ export default function Contact() {
 
                 <div>
                   <a
-                    href="https://wa.me/966590536401"
+                    href="https://wa.me/966590534431"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 hover:bg-[#25D366]/20 hover:border-[#25D366]/40 transition-all duration-300"
@@ -358,7 +358,7 @@ export default function Contact() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer whiteText />
     </div>
   );
 }

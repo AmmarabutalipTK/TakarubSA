@@ -23,9 +23,29 @@ function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,107,53,0.15),_transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,107,53,0.08),_transparent_50%)]" />
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 text-center">
-        <motion.h1 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8">
-          {isAr ? <>ابنِ تطبيقات ويب<br className="hidden md:block" /><span className="text-primary">تُحرّك أعمالك</span></> : <>Build Web Applications{" "}<br className="hidden md:block" /><span className="text-primary">That Power Your Business</span></>}
-        </motion.h1>
+<motion.h1
+  {...fadeUp}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8"
+>
+  {isAr ? (
+    <>
+      ابنِ تطبيقات ويب
+      <br />
+      <span className="block mt-[25px] md:mt-[50px] text-primary">
+        تُحرّك أعمالك
+      </span>
+    </>
+  ) : (
+    <>
+      Build Web Applications
+      <br />
+      <span className="block mt-[20px] text-primary">
+        That Power Your Business
+      </span>
+    </>
+  )}
+</motion.h1>
         <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-4 leading-relaxed">
           {isAr ? "نصمّم وننمّي تطبيقات ويب سريعة وآمنة وقابلة للتوسع تساعد الشركات على تبسيط عملياتها وتقديم تجارب مستخدم استثنائية." : "We design and develop fast, secure, and scalable web applications that help businesses streamline operations and deliver exceptional user experiences."}
         </motion.p>

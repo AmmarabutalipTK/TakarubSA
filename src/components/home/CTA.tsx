@@ -43,7 +43,7 @@ export function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://wa.me/966590536401" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/966590534431" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-primary to-amber-500 hover:from-primary/90 hover:to-amber-500/90 text-lg h-14 px-8 gap-2 group shadow-xl shadow-primary/20"

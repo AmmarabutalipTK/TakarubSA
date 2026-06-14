@@ -31,9 +31,29 @@ function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,107,53,0.08),_transparent_70%)]" />
 
       <motion.div style={{ y: textY }} className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center pt-32 pb-24">
-        <motion.h1 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8 text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
-          {isAr ? <>ابنِ محافظ عملات رقمية آمنة<br className="hidden md:block" /><span className="bg-gradient-to-r from-primary via-orange-400 to-amber-400 bg-clip-text text-transparent">لجيل المالية القادم</span></> : <>Build Secure Crypto Wallets{" "}<br className="hidden md:block" /><span className="bg-gradient-to-r from-primary via-orange-400 to-amber-400 bg-clip-text text-transparent">for the Next Generation of Finance</span></>}
-        </motion.h1>
+  <motion.h1
+  {...fadeUp}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8 text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]"
+>
+  {isAr ? (
+    <>
+      ابنِ محافظ عملات رقمية آمنة
+      <br />
+      <span className="block mt-[14px] md:mt-[20px] bg-gradient-to-r from-primary via-orange-400 to-amber-400 bg-clip-text text-transparent">
+        لجيل المالية القادم
+      </span>
+    </>
+  ) : (
+    <>
+      Build Secure Crypto Wallets
+      <br />
+      <span className="block mt-[20px] bg-gradient-to-r from-primary via-orange-400 to-amber-400 bg-clip-text text-transparent">
+        for the Next Generation of Finance
+      </span>
+    </>
+  )}
+</motion.h1>
         <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-4 leading-relaxed drop-shadow-[0_1px_10px_rgba(0,0,0,0.5)]">
           {isAr ? "نصمّم وننمّي محافظ عملات رقمية مركزية ولامركزية مع معاملات سلسة وأمان متقدم وتكاملات قوية." : "We design and develop centralized and decentralized crypto wallets with seamless transactions, advanced security, and powerful integrations."}
         </motion.p>
@@ -455,7 +475,7 @@ export default function CryptoWallet() {
         <MultiChainSection />
         <CTASection />
       </main>
-      <Footer />
+      <Footer whiteText />
     </div>
   );
 }

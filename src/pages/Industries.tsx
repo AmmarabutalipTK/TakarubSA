@@ -225,7 +225,7 @@ export default function IndustriesPage() {
         {/* CTA */}
         <CTASection ind={ind} isRTL={isRTL} />
       </main>
-      <Footer />
+      <Footer  whiteText/>
     </div>
   );
 }

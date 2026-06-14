@@ -508,7 +508,7 @@ const en = {
         content: [
           "If you have any questions or concerns about this Privacy Policy, please contact us:",
           "Email: Contact@takarubsa.com",
-          "Phone: +966 590 536 401",
+          "Phone: +966 59 053 4431",
           "Location: Kingdom of Saudi Arabia",
         ],
       },
@@ -574,7 +574,7 @@ const en = {
         content: [
           "If you have any questions about these Terms of Service, please contact us:",
           "Email: Contact@takarubsa.com",
-          "Phone: +966 590 536 401",
+          "Phone: +966 59 053 4431",
           "Location: Kingdom of Saudi Arabia",
         ],
       },
@@ -780,8 +780,7 @@ const ar: typeof en = {
   footer: {
     description:
       "حلول رقمية متكاملة للشركات في المملكة العربية السعودية والمنطقة العربية. نساعدك على التواصل والأتمتة وبناء حضورك الرقمي.",
-    copyright: "© 2026 تقارب للتقنية الأولى. جميع الحقوق محفوظة.",
-    privacyPolicy: "سياسة الخصوصية",
+copyright: "جميع الحقوق محفوظة © 2026 شركة تقارب الأولى التقنية.",    privacyPolicy: "سياسة الخصوصية",
     termsOfService: "شروط الخدمة",
     whatsappChat: "محادثة واتساب",
     location: "المملكة العربية السعودية",
@@ -1090,7 +1089,7 @@ const ar: typeof en = {
         content: [
           "إذا كانت لديك أي أسئلة أو مخاوف حول سياسة الخصوصية هذه، يرجى التواصل معنا:",
           "البريد الإلكتروني: Contact@takarubsa.com",
-          "الهاتف: +966 590 536 401",
+          "الهاتف: +966 59 053 4431",
           "الموقع: المملكة العربية السعودية",
         ],
       },
@@ -1156,7 +1155,7 @@ const ar: typeof en = {
         content: [
           "إذا كانت لديك أي أسئلة حول شروط الخدمة هذه، يرجى التواصل معنا:",
           "البريد الإلكتروني: Contact@takarubsa.com",
-          "الهاتف: +966 590 536 401",
+          "الهاتف: +966 59 053 4431",
           "الموقع: المملكة العربية السعودية",
         ],
       },

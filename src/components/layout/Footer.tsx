@@ -1,9 +1,16 @@
 import { Facebook, Twitter, Instagram } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-export function Footer() {
+interface FooterProps {
+  whiteText?: boolean;
+}
+
+export function Footer({ whiteText = false }: FooterProps) {
   const { tr } = useLanguage();
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+  const textClass = whiteText ? "text-white" : "text-black";
+  const mutedClass = whiteText ? "text-white/70" : "text-black/70";
 
   const footerSections = [
     {
@@ -43,59 +50,73 @@ export function Footer() {
       title: tr.footer.categories.contact,
       links: [
         { label: "Contact@takarubsa.com", href: "mailto:Contact@takarubsa.com" },
-        { label: "+966 590 536 401", href: "tel:+966590536401" },
-        { label: tr.footer.whatsappChat, href: "https://wa.me/966590536401" },
+        { label: "+966 59 053 4431", href: "tel:+966590534431" },
+        { label: tr.footer.whatsappChat, href: "https://wa.me/966590534431" },
         { label: tr.footer.location, href: undefined },
       ],
     },
   ];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground pt-24 pb-12 border-t border-border/10">
+    <footer className={`bg-secondary pt-24 pb-12 border-t ${textClass}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-12 lg:gap-6 mb-16">
           <div className="lg:col-span-2">
             <a href={`${base}/`} className="flex items-center mb-6">
-              <img 
-                src={`${import.meta.env.BASE_URL}images/takarub-logo.webp`}
+              <img
+                src={`${import.meta.env.BASE_URL}images/takarub_logo.png`}
                 alt="Takarub"
                 className="h-24 w-auto"
               />
             </a>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-8 max-w-xs">
+
+            <p className={`text-sm leading-relaxed mb-8 max-w-xs ${mutedClass}`}>
               {tr.footer.description}
             </p>
+
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
 
           {footerSections.map((section) => (
-            <div key={section.title} className="lg:col-span-1">
-              <h4 className="font-display font-bold text-white mb-6">{section.title}</h4>
+            <div key={section.title}>
+              <h4 className={`font-display font-bold mb-6 ${textClass}`}>
+                {section.title}
+              </h4>
+
               <ul className="flex flex-col gap-4">
                 {section.links.map((item) => {
-                  const isExternal = item.href && (item.href.startsWith("http") || item.href.startsWith("mailto:") || item.href.startsWith("tel:"));
+                  const isExternal =
+                    item.href &&
+                    (item.href.startsWith("http") ||
+                      item.href.startsWith("mailto:") ||
+                      item.href.startsWith("tel:"));
+
                   return (
                     <li key={item.label}>
                       {item.href ? (
-                        <a
+                        <a dir={item?.label==="+966 59 053 4431"?"ltr":undefined}
                           href={item.href}
-                          {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                          className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                          {...(isExternal
+                            ? { target: "_blank", rel: "noopener noreferrer" }
+                            : {})}
+                          className={`text-sm ${mutedClass} hover:text-primary transition-colors`}
                         >
                           {item.label}
                         </a>
                       ) : (
-                        <span className="text-sm text-muted-foreground">{item.label}</span>
+                        <span className={`text-sm ${mutedClass}`}>
+                          {item.label}
+                        </span>
                       )}
                     </li>
                   );
@@ -106,12 +127,24 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
+          <p className={`text-sm ${mutedClass}`}>
             {tr.footer.copyright}
           </p>
+
           <div className="flex items-center gap-6">
-            <a href={`${base}/privacy-policy`} className="text-sm text-muted-foreground hover:text-white transition-colors">{tr.footer.privacyPolicy}</a>
-            <a href={`${base}/terms-of-service`} className="text-sm text-muted-foreground hover:text-white transition-colors">{tr.footer.termsOfService}</a>
+            <a
+              href={`${base}/privacy-policy`}
+              className={`text-sm ${mutedClass} hover:text-primary transition-colors`}
+            >
+              {tr.footer.privacyPolicy}
+            </a>
+
+            <a
+              href={`${base}/terms-of-service`}
+              className={`text-sm ${mutedClass} hover:text-primary transition-colors`}
+            >
+              {tr.footer.termsOfService}
+            </a>
           </div>
         </div>
       </div>

@@ -42,9 +42,29 @@ function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,107,53,0.15),_transparent_60%)]" />
       <motion.div style={{ y: heroTextY, opacity: heroOpacity }} className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 text-center">
-        <motion.h1 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8">
-          {isAr ? <>ابنِ تطبيقات جوال<br className="hidden md:block" /><span className="text-primary">تواكب نمو أعمالك</span></> : <>Build Mobile Apps That<br className="hidden md:block" /><span className="text-primary">Scale With Your Business</span></>}
-        </motion.h1>
+<motion.h1
+  {...fadeUp}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8"
+>
+  {isAr ? (
+    <>
+      ابنِ تطبيقات جوال
+      <br />
+      <span className="block mt-[14px] md:mt-[20px] text-primary">
+        تواكب نمو أعمالك
+      </span>
+    </>
+  ) : (
+    <>
+      Build Mobile Apps That
+      <br />
+      <span className="block mt-[20px] text-primary">
+        Scale With Your Business
+      </span>
+    </>
+  )}
+</motion.h1>
         <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-4 leading-relaxed">
           {isAr ? "نصمّم وننمّي تطبيقات جوال عالية الأداء تجمع بين تجارب مستخدم بديهية وأنظمة خلفية قوية. من الأفكار المبكرة إلى المنصات على مستوى المؤسسات، نحوّل المفاهيم إلى منتجات رقمية موثوقة." : "We design and develop high-performance mobile applications that combine intuitive user experiences with powerful backend systems. From early-stage ideas to enterprise-grade platforms, we turn concepts into reliable digital products."}
         </motion.p>

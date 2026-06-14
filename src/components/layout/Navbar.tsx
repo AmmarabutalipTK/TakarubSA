@@ -99,10 +99,9 @@ export function Navbar() {
           <div className="flex items-center justify-between h-20">
             <a href={resolveHref("/")} className="flex-shrink-0 flex items-center">
               <img 
-                src={`${import.meta.env.BASE_URL}images/takarub-logo.webp`}
+                src={`${import.meta.env.BASE_URL}images/takarub_logo.png`}
                 alt="Takarub"
-                className="h-24 w-auto"
-                style={{ filter: "brightness(0)" }}
+                className="h-[75px] w-auto"
               />
             </a>
 

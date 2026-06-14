@@ -31,9 +31,34 @@ function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,107,53,0.1),_transparent_60%)]" />
 
       <motion.div style={{ y: textY }} className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center pt-32 pb-24">
-        <motion.h1 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8 text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
-          {isAr ? <>عقود ذكية آمنة<br className="hidden md:block" /><span className="bg-gradient-to-r from-primary via-orange-400 to-amber-400 bg-clip-text text-transparent">تُشغّل العالم اللامركزي</span></> : <>Secure Smart Contracts{" "}<br className="hidden md:block" /><span className="bg-gradient-to-r from-primary via-orange-400 to-amber-400 bg-clip-text text-transparent">That Power the Decentralized World</span></>}
-        </motion.h1>
+<motion.h1
+  {...fadeUp}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.2] md:leading-[1.1] mb-8 text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]"
+>
+  {isAr ? (
+    <>
+      عقود ذكية آمنة
+      <br />
+      <span
+        className="block mt-[14px] md:mt-[20px] leading-[1.3] pt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-orange-400 to-amber-400"
+        style={{
+          WebkitTextStroke: "0.3px transparent",
+        }}
+      >
+        تُشغّل العالم اللامركزي
+      </span>
+    </>
+  ) : (
+    <>
+      Secure Smart Contracts
+      <br />
+      <span className="block mt-[20px] bg-gradient-to-r from-primary via-orange-400 to-amber-400 bg-clip-text text-transparent">
+        That Power the Decentralized World
+      </span>
+    </>
+  )}
+</motion.h1>
         <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-4 leading-relaxed drop-shadow-[0_1px_10px_rgba(0,0,0,0.5)]">
           {isAr ? "نصمّم وننمّي ونُدقّق وننشر عقوداً ذكية محكمة الاختبار عبر شبكات البلوك تشين الرائدة لـ DeFi وNFTs وDAOs وحلول المؤسسات." : "We design, develop, audit, and deploy battle-tested smart contracts across leading blockchain networks for DeFi, NFTs, DAOs, and enterprise solutions."}
         </motion.p>
@@ -462,7 +487,7 @@ export default function SmartContractDevelopment() {
         <TestimonialsSection />
         <CTASection />
       </main>
-      <Footer />
+      <Footer  whiteText/>
     </div>
   );
 }

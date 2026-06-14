@@ -22,9 +22,29 @@ function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,107,53,0.15),_transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,107,53,0.08),_transparent_50%)]" />
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 text-center">
-        <motion.h1 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8">
-          {isAr ? <>ابنِ تطبيقات Android قوية<br className="hidden md:block" /><span className="text-primary">لجمهور عالمي</span></> : <>Build Powerful Android Apps{" "}<br className="hidden md:block" /><span className="text-primary">for a Global Audience</span></>}
-        </motion.h1>
+<motion.h1
+  {...fadeUp}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8"
+>
+  {isAr ? (
+    <>
+      ابنِ تطبيقات Android قوية
+      <br />
+      <span className="block mt-[14px] md:mt-[20px] text-primary">
+        لجمهور عالمي
+      </span>
+    </>
+  ) : (
+    <>
+      Build Powerful Android Apps
+      <br />
+      <span className="block mt-[20px] text-primary">
+        for a Global Audience
+      </span>
+    </>
+  )}
+</motion.h1>
         <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-4 leading-relaxed">
           {isAr ? "نبني تطبيقات Android قابلة للتوسع وعالية الأداء مصمّمة للعمل بسلاسة عبر الأجهزة والمستخدمين والبيئات التجارية المعقدة." : "We create scalable, high-performance Android applications designed to run seamlessly across devices, users, and complex business environments."}
         </motion.p>

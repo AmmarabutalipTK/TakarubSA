@@ -41,9 +41,29 @@ function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,107,53,0.15),_transparent_60%)]" />
       <motion.div style={{ y: textY, opacity: heroOpacity }} className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 text-center">
-        <motion.h1 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8">
-          {isAr ? <>ابنِ تطبيقات iPhone<br className="hidden md:block" /><span className="text-primary">يُحبّ الناس استخدامها</span></> : <>Build iPhone Apps That<br className="hidden md:block" /><span className="text-primary">People Love to Use</span></>}
-        </motion.h1>
+ <motion.h1
+  {...fadeUp}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8"
+>
+  {isAr ? (
+    <>
+      ابنِ تطبيقات iPhone
+      <br />
+      <span className="block mt-[14px] md:mt-[20px] text-primary">
+        يُحبّ الناس استخدامها
+      </span>
+    </>
+  ) : (
+    <>
+      Build iPhone Apps That
+      <br />
+      <span className="block mt-[20px] text-primary">
+        People Love to Use
+      </span>
+    </>
+  )}
+</motion.h1>
         <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-4 leading-relaxed">
           {isAr ? "نصمّم وننمّي تطبيقات iOS عالية الأداء تجمع بين التصميم الأنيق والوظائف القوية — مبنية للتوسع من الشركات الناشئة إلى المؤسسات الكبرى." : "We design and develop high-performance iOS applications that combine elegant design with powerful functionality — built to scale from startup to enterprise."}
         </motion.p>

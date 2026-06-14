@@ -278,7 +278,7 @@ export default function About() {
         <AboutCTASection tr={tr} isRTL={isRTL} />
 
       </main>
-      <Footer />
+      <Footer whiteText />
     </div>
   );
 }
