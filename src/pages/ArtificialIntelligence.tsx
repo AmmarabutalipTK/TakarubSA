@@ -700,7 +700,7 @@ export default function ArtificialIntelligence() {
         <DevelopmentProcess />
         <CTASection />
       </main>
-      <Footer />
+      <Footer  whiteText/>
     </div>
   );
 }

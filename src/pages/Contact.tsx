@@ -123,9 +123,12 @@ export default function Contact() {
               </span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-5 leading-tight">
                 {tr.contact.heading}{" "}
-                <span className="bg-gradient-to-r from-primary to-amber-400 bg-clip-text text-transparent">
-                  {tr.contact.headingHighlight}
-                </span>
+    <span
+  className="bg-gradient-to-r from-primary to-amber-400 inline-block bg-clip-text text-transparent"
+  style={{ paddingTop: "0.15em" }}
+>
+  {tr.contact.headingHighlight}
+</span>
               </h1>
               <p className="text-lg text-white/40 max-w-xl mx-auto">
                 {tr.contact.subheading}
