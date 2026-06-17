@@ -80,6 +80,7 @@ export function Navbar() {
   const navLinks = [
     { name: tr.nav.home, href: "/" },
     { name: tr.nav.about, href: "/about" },
+    { name: tr.nav.portfolio, href: "/portfolio" },
     { name: tr.nav.industries, href: "/industries" },
   ];
 

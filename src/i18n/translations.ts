@@ -4,6 +4,7 @@ const en = {
   nav: {
     home: "Home",
     about: "About",
+    portfolio:"Portfolio",
     services: "Services",
     industries: "Industries",
     getInTouch: "Get in Touch",
@@ -586,6 +587,7 @@ const ar: typeof en = {
   nav: {
     home: "الرئيسية",
     about: "من نحن",
+    portfolio:"الأعمال",
     services: "الخدمات",
     industries: "القطاعات",
     getInTouch: "تواصل معنا",
