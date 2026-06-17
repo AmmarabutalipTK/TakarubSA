@@ -48,6 +48,17 @@ const CATEGORY_COLORS: Record<Exclude<Category, "All">, string> = {
 };
 
 const PROJECTS: Project[] = [
+    {
+    name: "Hakeem Care",
+    nameAr: "حكيم كير",
+    tagline: "Saudi Arabia's all-in-one digital health platform",
+    taglineAr: "منصة الرعاية الصحية الرقمية الشاملة في السعودية",
+    description: "Saudi Arabia's leading digital healthcare platform — telemedicine, home nursing, lab tests, appointment scheduling, online classes with overseas experts, home spa, and AI-powered Hakeem Smart medical assistant.",
+    descriptionAr: "المنصة الصحية الرقمية الرائدة في المملكة العربية السعودية — طب عن بُعد، تمريض منزلي، فحوصات مخبرية، جدولة مواعيد، ومساعد طبي ذكي Hakeem Smart.",
+    category: "Healthcare",
+    image: `${BASE}/images/hakeem.webp`,
+    tags: ["Healthcare", "Saudi Arabia", "Telemedicine", "Home Care"],
+  },
   // ── AI & Machine Learning ──
   {
     name: "AI Marketing Automation Platform",
@@ -184,17 +195,6 @@ const PROJECTS: Project[] = [
     tags: ["HealthFintech", "Credit", "B2C"],
   },
   // ── Healthcare ──
-  {
-    name: "Hakeem Care",
-    nameAr: "حكيم كير",
-    tagline: "Saudi Arabia's all-in-one digital health platform",
-    taglineAr: "منصة الرعاية الصحية الرقمية الشاملة في السعودية",
-    description: "Saudi Arabia's leading digital healthcare platform — telemedicine, home nursing, lab tests, appointment scheduling, online classes with overseas experts, home spa, and AI-powered Hakeem Smart medical assistant.",
-    descriptionAr: "المنصة الصحية الرقمية الرائدة في المملكة العربية السعودية — طب عن بُعد، تمريض منزلي، فحوصات مخبرية، جدولة مواعيد، ومساعد طبي ذكي Hakeem Smart.",
-    category: "Healthcare",
-    image: `${BASE}/images/hakeem.webp`,
-    tags: ["Healthcare", "Saudi Arabia", "Telemedicine", "Home Care"],
-  },
   {
     name: "Voice AI Elderly Care",
     nameAr: "رعاية كبار السن بالصوت الذكي",
