@@ -227,7 +227,9 @@ export function Navbar() {
             <a href={resolveHref("/about")} className="text-base font-semibold text-foreground p-2 rounded-lg hover:bg-muted transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
               {tr.nav.about}
             </a>
-
+            <a href={resolveHref("/portfolio")} className="text-base font-semibold text-foreground p-2 rounded-lg hover:bg-muted transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+              {tr.nav.portfolio}
+            </a>
             <div>
               <button
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
