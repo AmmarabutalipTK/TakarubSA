@@ -71,37 +71,38 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("submitting");
-    setErrorMsg("");
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setStatus("submitting");
+  setErrorMsg("");
 
-    try {
-      const payload = {
-        ...formData,
+  try {
+    const res = await fetch("https://formsubmit.co/ajax/Contact@takarubsa.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
         mobile: `${countryCode} ${formData.mobile}`.trim(),
-      };
+        service: formData.service,
+        message: formData.message,
+        _subject: `New inquiry from ${formData.name}`,
+      }),
+    });
 
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (res.ok) {
-        setStatus("success");
-        setFormData({ name: "", email: "", mobile: "", service: "", message: "" });
-        setCountryCode("+966");
-      } else {
-        const data = await res.json().catch(() => ({}));
-        setErrorMsg(data.error || tr.contact.errorFallback);
-        setStatus("error");
-      }
-    } catch {
-      setErrorMsg(tr.contact.networkError);
+    if (res.ok) {
+      setStatus("success");
+      setFormData({ name: "", email: "", mobile: "", service: "", message: "" });
+      setCountryCode("+966");
+    } else {
+      setErrorMsg(tr.contact.errorFallback);
       setStatus("error");
     }
-  };
+  } catch {
+    setErrorMsg(tr.contact.networkError);
+    setStatus("error");
+  }
+};
 
   return (
     <div className="min-h-screen flex flex-col w-full bg-[#07070e] selection:bg-primary selection:text-white">
